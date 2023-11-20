@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="medium" parent="TextAppearance.AppCompat">
+        <item name="fontWeight">400</item>
+        <item name="android:fontFamily">@font/inter_medium</item>
+    </style>
+    <style name="semibold" parent="TextAppearance.AppCompat">
+        <item name="fontWeight">600</item>
+        <item name="android:fontFamily">@font/inter_semibold</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.circleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>

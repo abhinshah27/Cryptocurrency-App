@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="model"
+            type="my.demo.myapplication.domain.model.CryptoModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".presentation.ui.home.fragment.HomeFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_launchpad"
+            style="@style/semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_26"
+            android:layout_marginTop="@dimen/dp_40"
+            android:text="@string/exchanges"
+            android:textColor="@color/color_black_bg"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textAllCaps="true" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="@dimen/dp_10"
+            android:layout_height="@dimen/dp_10"
+            android:src="@color/yellow"
+            app:layout_constraintBottom_toTopOf="@+id/img_bell"
+            app:layout_constraintEnd_toEndOf="@+id/img_bell"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.circleImageView"
+            tools:ignore="ImageContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_bell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:src="@drawable/ic_bell"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_launchpad"
+            app:layout_constraintEnd_toStartOf="@+id/img_settings"
+            app:layout_constraintTop_toTopOf="@+id/txt_launchpad" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_32"
+            android:src="@drawable/ic_settings"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_launchpad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_launchpad" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_search_crypto"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"
+            android:layout_marginEnd="@dimen/dp_10"
+            app:cardCornerRadius="@dimen/dp_100"
+            app:layout_constraintEnd_toStartOf="@+id/card_filter"
+            app:layout_constraintStart_toStartOf="@+id/txt_launchpad"
+            app:layout_constraintTop_toBottomOf="@+id/txt_launchpad"
+            app:strokeWidth="@dimen/dp_0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black_bg">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/dp_14"
+                    android:layout_marginStart="@dimen/dp_24"
+                    android:src="@drawable/ic_search"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ImageContrastCheck" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/txt_search_crypto"
+                    style="@style/medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/search_cryptocurrency"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:padding="@dimen/dp_4"
+                    android:textColor="@color/black_font"
+                    android:textSize="@dimen/sp_14"
+                    android:clickable="false"
+                    android:enabled="false"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_search"
+                    app:layout_constraintStart_toEndOf="@+id/img_search"
+                    app:layout_constraintTop_toTopOf="@+id/img_search"
+                    tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_filter"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_32"
+            app:cardCornerRadius="@dimen/dp_100"
+            app:layout_constraintBottom_toBottomOf="@+id/card_search_crypto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/card_search_crypto"
+            app:strokeWidth="@dimen/dp_1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/dp_14"
+                    android:layout_marginStart="@dimen/dp_14"
+                    android:src="@drawable/ic_filter"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ImageContrastCheck"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_filter"
+                    style="@style/medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_marginEnd="@dimen/dp_14"
+                    android:text="@string/filter"
+                    android:textColor="@color/black_font"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_filter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_filter"
+                    app:layout_constraintTop_toTopOf="@+id/img_filter"
+                    tools:ignore="TextContrastCheck"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_cryptocurrency"
+            style="@style/semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_26"
+            android:layout_marginTop="@dimen/dp_22"
+            android:text="@string/cryptocurrency"
+            android:textColor="@color/color_black_bg"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_search_crypto"
+            app:textAllCaps="true"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_nft"
+            style="@style/semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:text="@string/nft_title"
+            android:textColor="@color/black_font"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_cryptocurrency"
+            app:layout_constraintStart_toEndOf="@+id/txt_cryptocurrency"
+            app:layout_constraintTop_toTopOf="@+id/txt_cryptocurrency"
+            tools:ignore="TextContrastCheck"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_banner"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_150"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_32"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_banner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txt_cryptocurrency"
+            app:layout_constraintTop_toBottomOf="@+id/txt_cryptocurrency"
+            tools:ignore="ImageContrastCheck"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_usd"
+            style="@style/semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_30"
+            android:layout_marginEnd="@dimen/dp_20"
+            setPrice="@{model.price}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintEnd_toEndOf="@+id/img_banner"
+            app:layout_constraintTop_toTopOf="@+id/img_banner"
+            tools:text="$55,000 USD"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_usd_percentage"
+            style="@style/semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            setPercentChange="@{model.percentChange24h}"
+            android:textColor="@color/green"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/txt_usd"
+            app:layout_constraintTop_toBottomOf="@+id/txt_usd"
+            tools:ignore="TextContrastCheck"
+            tools:text="+2.5%"/>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_top_crypto"
+            style="@style/medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_26"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="@string/top_cryptocurrencies"
+            android:textColor="@color/color_black_bg"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_banner"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_top_view_all"
+            style="@style/medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_22"
+            android:text="@string/view_all"
+            android:textColor="@color/font_gray"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="@+id/img_banner"
+            app:layout_constraintTop_toBottomOf="@+id/img_banner"
+            tools:ignore="TextContrastCheck"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_crypto"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_marginHorizontal="@dimen/dp_26"
+            android:layout_marginBottom="@dimen/dp_24"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_top_crypto"
+            tools:itemCount="3"
+            android:visibility="gone"
+            tools:listitem="@layout/item_crypto"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:visibility="gone"
+            android:layout_marginHorizontal="@dimen/dp_26"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_top_crypto"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

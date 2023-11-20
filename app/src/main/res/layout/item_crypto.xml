@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="model"
+            type="my.demo.myapplication.domain.model.CryptoModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dp_10">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_logo"
+            setLogo="@{model.logo}"
+            android:layout_width="@dimen/dp_46"
+            android:layout_height="@dimen/dp_46"
+            android:src="@drawable/ic_dummy"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_symbol"
+            style="@style/semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_4"
+            android:text="@{model.symbol}"
+            android:textColor="@color/black_90"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintStart_toEndOf="@+id/img_logo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="ETH" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_name"
+            style="@style/medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.slug}"
+            android:textColor="@color/black_50"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintStart_toStartOf="@+id/txt_symbol"
+            app:layout_constraintTop_toBottomOf="@+id/txt_symbol"
+            tools:ignore="TextContrastCheck"
+            tools:text="Ethereum" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_percent_change"
+            setChangesImage="@{model.positive}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            app:layout_constraintStart_toEndOf="@+id/txt_symbol"
+            app:layout_constraintTop_toTopOf="@+id/txt_symbol" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_usd"
+            style="@style/semibold"
+            setPrice="@{model.price}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="$55,000 USD" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_usd_percentage"
+            style="@style/semibold"
+            setPercentChange="@{model.percentChange24h}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            android:textColor="@color/green"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/txt_usd"
+            app:layout_constraintTop_toBottomOf="@+id/txt_usd"
+            tools:ignore="TextContrastCheck"
+            tools:text="+2.5%" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

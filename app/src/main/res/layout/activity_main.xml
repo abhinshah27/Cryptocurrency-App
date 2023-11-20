@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.home.MainActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/navigation_graph" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_14"
+        android:layout_marginBottom="@dimen/dp_24"
+        app:cardCornerRadius="@dimen/dp_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_black_bg">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_eshop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:src="@drawable/ic_eshop"
+                app:layout_constraintEnd_toStartOf="@+id/img_exchange"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_eshop"
+                style="@style/semibold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:text="@string/eshop"
+                android:textColor="@color/white_40"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/img_eshop"
+                app:layout_constraintStart_toStartOf="@+id/img_eshop"
+                app:layout_constraintTop_toBottomOf="@+id/img_eshop"
+                tools:ignore="TextContrastCheck" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_exchange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_exchange"
+                app:layout_constraintEnd_toStartOf="@+id/img_earth"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/img_eshop"
+                app:layout_constraintTop_toTopOf="@+id/img_eshop" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_exchange"
+                style="@style/semibold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exchange"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_eshop"
+                app:layout_constraintEnd_toEndOf="@+id/img_exchange"
+                app:layout_constraintStart_toStartOf="@+id/img_exchange"
+                app:layout_constraintTop_toTopOf="@+id/txt_eshop" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_earth"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_60"
+                android:src="@drawable/ic_earth"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toStartOf="@+id/img_launchpad"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/img_exchange"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_launchpad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_launchpad"
+                app:layout_constraintEnd_toStartOf="@+id/img_wallet"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/img_earth"
+                app:layout_constraintTop_toTopOf="@+id/img_eshop" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_launchpad"
+                style="@style/semibold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/launchpads"
+                android:textColor="@color/white_40"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_eshop"
+                app:layout_constraintEnd_toEndOf="@+id/img_launchpad"
+                app:layout_constraintStart_toStartOf="@+id/img_launchpad"
+                app:layout_constraintTop_toTopOf="@+id/txt_eshop"
+                tools:ignore="TextContrastCheck" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_wallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_wallet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/img_launchpad"
+                app:layout_constraintTop_toTopOf="@+id/img_eshop" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_wallet"
+                style="@style/semibold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wallet"
+                android:textColor="@color/white_40"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_eshop"
+                app:layout_constraintEnd_toEndOf="@+id/img_wallet"
+                app:layout_constraintStart_toStartOf="@+id/img_wallet"
+                app:layout_constraintTop_toTopOf="@+id/txt_eshop"
+                tools:ignore="TextContrastCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

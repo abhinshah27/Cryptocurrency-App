@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+    android:id="@+id/menu_action_price"
+    android:title="@string/price"
+    app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/menu_action_volume_24h"
+        android:title="@string/volume_24h"
+        app:showAsAction="ifRoom"/>
+</menu>
